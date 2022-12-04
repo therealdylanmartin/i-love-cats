@@ -1,4 +1,4 @@
-# I Love Cats : For Instructional Purposes
+# I Love Cats Website (For Instructional Purposes)
 
 ## Table of Contents
 
