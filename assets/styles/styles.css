@@ -1,0 +1,144 @@
+/***************** Google Fonts *****************/
+/* font-family: 'Caveat', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+
+/***************** Helper Classes *****************/
+.float-clear::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-small {
+  font-size: 14px;
+}
+
+
+/***************** Global Classes *****************/
+* {
+  font-family: 'Caveat', cursive;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: paleturquoise;
+  padding: 10px;
+}
+
+.logo {
+  width: 160px;
+}
+
+.logo__img {
+  width: 100%
+}
+
+.top-nav__links {
+  margin-top: 33px;
+  margin-right: 20px;
+  /* margin: 33px 20px 0 0; */
+}
+
+.top-nav__links a {
+  color: rgb(0,0,0);
+  font-size: 34px;
+  text-decoration: none;
+}
+
+.top-nav__links a:hover {
+  text-decoration: underline;
+}
+
+.top-nav__links a:first-child {
+  margin-right: 20px;
+}
+
+.page-content {
+  margin: 30px 10px;
+}
+
+.page-divider {
+  border-top: 2px dashed #000;
+  margin: 30px 15px;
+}
+
+footer {
+  background-color: paleturquoise;
+  padding: 20px 10px;
+}
+
+
+/***************** Page Title *****************/
+.page-title h1 {
+  font-size: 3.8em;
+  margin-bottom: 0;
+}
+
+.page-title h2 {
+  font-size: 1.8em;
+  margin: 0 0 40px;
+}
+
+
+/***************** Cat Bios *****************/
+.cat-bio {
+  margin: 20px 100px 40px 200px;
+}
+
+.cat-bio__img {
+  width: calc(50% - 20px);
+}
+
+.cat-bio__img img {
+  width: 100%;
+  padding-right: 20px;
+}
+
+.cat-bio__profile {
+  width: 50%;
+}
+
+/***************** Adopt A Cat *****************/
+.cat-adopt {
+  margin: 50px auto;
+}
+
+.cat-adopt h2 {
+  font-size: 4em;
+}
+
+#adopt-button {
+  background-color: turquoise;
+  border: 2px solid turquoise;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Caveat', cursive;
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: .15em;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: background-color .3s ease-out, color .3s ease-in;
+}
+
+#adopt-button:hover {
+  background-color: transparent;
+  color: turquoise;
+}
