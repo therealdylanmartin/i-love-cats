@@ -50,6 +50,9 @@ ol {
 
 /* Tablet Screen ONLY */
 @media only screen and (min-width: 501px) and (max-width: 700px) {
+  body {
+    padding-top: 218px;
+  }
   main {
     font-size: 120%;
   }
