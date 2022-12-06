@@ -2,8 +2,6 @@
 
 ## Table of Contents
 
----
----
 - [Installation](#installation)
 - [License](#license)
 - [Features](#features)

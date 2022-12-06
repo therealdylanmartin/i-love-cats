@@ -1,0 +1,110 @@
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | I Love Cats</title>
+  <link href="../assets/styles/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="top-nav flex-container justify-between flex-column-mobile">
+      <a href="/" class="logo" aria-label="I Love Cats Homepage">
+        <img class="logo__img" src="../assets/images/i-love-cats_logo.png" alt="I Love Cats!" />
+      </a>
+      <hr class="page-divider display-mobile" />
+      <div class="top-nav__links">
+        <a href="/pages/about-me.html">About Me</a>
+        <a href="mailto:dylan@ilovecats.com">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-content">
+
+    <div class="page-title text-center">
+      <h1>About Me!</h1>
+      <h2>~ a skater with a soft spot for felines ~</h2>
+    </div>
+
+    <hr class="page-divider" />
+
+    <section id="bio-dylan-martin" class="cat-bio flex-container justify-between flex-column-tablet">
+      <div class="cat-bio__img">
+        <img src="../assets/images/dylan-martin-launching-skateboard.jpg"
+          alt="Dylan Martin skateboards down the street, ollying into the air" />
+      </div>
+      <div class="cat-bio__profile">
+        <h2>Name: Dylan Martin</h2>
+        <h3>Likes:</h3>
+        <ul>
+          <li>Coding cat websites</li>
+          <li>Riding on skateboards while thinking about cats</li>
+          <li>Petting cats</li>
+          <li>Cats!</li>
+        </ul>
+        <h3>Dislikes:</h3>
+        <ul>
+          <li>Cats being homeless</li>
+          <li>Those <emphasis>elite</emphasis> dog people (You know who you are!)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <form id="contact-form">
+        <h2 class="text-center">Contact Me:</h2>
+        <div class="form-row">
+          <label class="form-label" for="subject">Subject:</label>
+          <select class="form-input__select" id="subject">
+            <option value="">--Please choose an option--</option>
+            <option value="Interested in adopting a cat">Interested in adopting a cat</option>
+            <option value="I want to volunteer">I want to volunteer</option>
+            <option value="I want to host a fundraiser for I Love Cats!">I want to host a fundraiser for I Love Cats!
+            </option>
+            <option value="Contacting for a different reason">Contacting for a different reason</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="name">Name:</label>
+          <input class="form-input__text" id="name" type="text" placeholder="Jane Smith" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="email">E-mail:</label>
+          <input class="form-input__text" id="email" type="text" placeholder="me@mail-handle.com" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="comment">Comment:</label>
+          <textarea class="form-input__text" id="comment" rows="5" placeholder="I love cats too!"></textarea>
+        </div>
+        <div class="form-row">
+          <input class="form-input__checkbox" id="agreement" type="checkbox" required />
+          <label class="form-label" for="agreement">I agree to share my e-mail address with Dylan Martin</label>
+        </div>
+        <div class="form-row">
+          <button type="submit" class="primary-button" aria-label="Send message to Dylan">Send Message</button>
+        </div>
+      </form>
+    </section>
+
+    <hr class="page-divider" />
+
+    <section id="cat-adoption" class="cat-adopt text-center">
+      <h2>Adopt a Cat of Your Own!</h2>
+      <button id="adopt-button" class="primary-button" aria-label="Get started with adopting a cat">
+        Get Started Now
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <p class="text-small text-center">&copy; <i>Dylan Martin</i></p>
+  </footer>
+
+  <script defer src="../assets/scripts/index.js"></script>
+</body>
+
+</html>

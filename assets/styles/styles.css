@@ -3,19 +3,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
 
+/***************** Global HTML Elements *****************/
+* {
+  font-family: 'Caveat', cursive;
+}
+
+body {
+  margin: 0;
+  padding-top: 142px;
+}
+
+h1 {
+  font-size: 3.8em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.35em;
+}
+
+p,
+h5,
+ul li,
+ol li {
+  font-size: 1.2em;
+}
+
+ul,
+ol {
+  margin-top: -20px;
+}
+
+/* Big Desktop Screen */
+@media only screen and (min-width: 1200px) {
+  main {
+    font-size: 130%;
+  }
+}
+
+/* Tablet Screen ONLY */
+@media only screen and (min-width: 501px) and (max-width: 700px) {
+  main {
+    font-size: 120%;
+  }
+}
+
+/* Small Mobile Screen */
+@media only screen and (max-width: 400px) {
+  main {
+    font-size: 90%;
+  }
+}
+
+
 /***************** Helper Classes *****************/
-.float-clear::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
+.display-mobile {
+  display: none;
 }
 
 .text-center {
@@ -26,19 +76,61 @@
   font-size: 14px;
 }
 
+.text-italic {
+  font-style: italic;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/* Tablet Screen */
+@media screen and (max-width: 700px) {
+  .flex-column-tablet {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+/* Mobile Screen */
+@media only screen and (max-width: 500px) {
+  .display-desktop {
+    display: none;
+  }
+  .display-mobile {
+    display: block;
+  }
+  .flex-column-mobile {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
 
 /***************** Global Classes *****************/
-* {
-  font-family: 'Caveat', cursive;
-}
-
-body {
-  margin: 0;
-}
-
 header {
   background-color: paleturquoise;
   padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
 }
 
 .logo {
@@ -49,10 +141,21 @@ header {
   width: 100%
 }
 
+.page-divider {
+  border-top: 2px dashed #000;
+  margin: 30px 15px;
+  /* smallest size is full-width minus left & right margin */
+  min-width: calc(100% - 30px);
+}
+
+.top-nav > .page-divider {
+  margin: 20px 15px;
+}
+
 .top-nav__links {
   margin-top: 33px;
   margin-right: 20px;
-  /* margin: 33px 20px 0 0; */
+  /* can also use shorthand with "margin: 33px 20px 0 0;" */
 }
 
 .top-nav__links a {
@@ -73,57 +176,10 @@ header {
   margin: 30px 10px;
 }
 
-.page-divider {
-  border-top: 2px dashed #000;
-  margin: 30px 15px;
-}
-
-footer {
-  background-color: paleturquoise;
-  padding: 20px 10px;
-}
-
-
-/***************** Page Title *****************/
-.page-title h1 {
-  font-size: 3.8em;
-  margin-bottom: 0;
-}
-
-.page-title h2 {
-  font-size: 1.8em;
-  margin: 0 0 40px;
-}
-
-
-/***************** Cat Bios *****************/
-.cat-bio {
-  margin: 20px 100px 40px 200px;
-}
-
-.cat-bio__img {
-  width: calc(50% - 20px);
-}
-
-.cat-bio__img img {
-  width: 100%;
-  padding-right: 20px;
-}
-
-.cat-bio__profile {
-  width: 50%;
-}
-
-/***************** Adopt A Cat *****************/
-.cat-adopt {
-  margin: 50px auto;
-}
-
-.cat-adopt h2 {
-  font-size: 4em;
-}
-
-#adopt-button {
+.primary-button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   background-color: turquoise;
   border: 2px solid turquoise;
   border-radius: 5px;
@@ -138,7 +194,198 @@ footer {
   transition: background-color .3s ease-out, color .3s ease-in;
 }
 
-#adopt-button:hover {
+.primary-button:hover {
   background-color: transparent;
   color: turquoise;
 }
+
+footer {
+  background-color: paleturquoise;
+  padding: 20px 10px;
+}
+
+/* Big Desktop Screen */
+@media only screen and (min-width: 1200px) {
+  .top-nav {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Screen */
+@media only screen and (max-width: 500px) {
+  .top-nav__links {
+    margin-top: -10px;
+  }
+}
+
+
+/***************** Page Title *****************/
+.page-title h1 {
+  margin-bottom: 0;
+}
+
+.page-title h2 {
+  margin: 0 0 40px;
+}
+
+
+/***************** Cat Tiles *****************/
+
+.cat-tiles {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.cat-tile {
+  border-radius: 3px;
+  border: 2px solid black;
+  flex: 1 0 280px;
+  height: 340px;
+  overflow: hidden;
+  margin: 10px;
+  position: relative;
+  max-width: 340px;
+  transition: all .3s ease-in;
+}
+
+.cat-tile:hover {
+  border-color: turquoise;
+  transform: scale(1.06);
+}
+
+.cat-tile > img {
+  max-width: 100%;
+}
+
+.cat-tile > .overlay {
+  opacity: 0;
+  transition: opacity .3s ease-in;
+}
+
+.cat-tile:hover > .overlay {
+  background-color: rgba(255,255,255, .5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.cat-tile > .overlay > h3 {
+  color: #000;
+  font-size: 2.3em;
+}
+
+/* Tablet Screen */
+@media only screen and (max-width: 500px) {
+  .cat-tile {
+    height: 400px;
+    max-width: 100%;
+  }
+}
+
+
+/***************** Cat Bios *****************/
+.cat-bio {
+  margin: 20px auto 40px;
+  max-width: 800px;
+}
+
+.cat-bio__img {
+  width: 50%;
+}
+
+.cat-bio__img img {
+  width: 100%;
+}
+
+.cat-bio__profile {
+  width: calc(50% - 30px);
+  margin-left: 30px;
+}
+
+/* Tablet Screen */
+@media only screen and (max-width: 700px) {
+  .cat-bio {
+    max-width: 600px;
+  }
+  .cat-bio__img {
+    order: 2;
+    width: 100%;
+  }
+  .cat-bio__profile {
+    width: calc(100% - 30px);
+  }
+  .cat-bio__profile h2 {
+    margin-top: 0;
+  }
+}
+
+
+/***************** Adopt A Cat *****************/
+.cat-adopt {
+  margin: 50px auto;
+}
+
+.cat-adopt h2 {
+  font-size: 4em;
+}
+
+
+/***************** Contact Form *****************/
+form#contact-form {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.4em;
+  margin: 0 0 3px 2px;
+}
+
+.form-input__select,
+.form-input__text {
+  font-size: 1.2em;
+  height: 40px;
+  width: 100%;
+  transition: border-color .2s ease-in-out;
+}
+
+.form-input__select {
+  padding: 5;
+}
+
+.form-input__text {
+  padding: 8;
+}
+
+textarea.form-input__text {
+  height: auto;
+}
+
+.form-input__select:focus,
+.form-input__text:focus {
+  border-color: turquoise;
+}
+
+.form-input__checkbox {
+  height: 15px;
+  width: 15px;
+}
+
+.form-input__checkbox + .form-label {
+  color: red;
+  display: inline;
+}
+
+.form-input__checkbox:checked + .form-label {
+  color: green;
+}
+

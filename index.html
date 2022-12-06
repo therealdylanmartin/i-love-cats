@@ -10,13 +10,14 @@
 
 <body>
 
-  <header class="float-clear">
-    <nav class="top-nav">
-      <a href="/" class="logo float-left" aria-label="I Love Cats Homepage">
+  <header>
+    <nav class="top-nav flex-container justify-between flex-column-mobile">
+      <a href="/" class="logo" aria-label="I Love Cats Homepage">
         <img class="logo__img" src="./assets/images/i-love-cats_logo.png" alt="I Love Cats!" />
       </a>
-      <div class="top-nav__links float-right">
-        <a href="/about-me">About Me</a>
+      <hr class="page-divider display-mobile" />
+      <div class="top-nav__links">
+        <a href="/pages/about-me.html">About Me</a>
         <a href="mailto:dylan@ilovecats.com">Contact</a>
       </div>
     </nav>
@@ -31,66 +32,29 @@
 
     <hr class="page-divider" />
 
-    <section id="cat-bio-gojira" class="cat-bio float-clear">
-      <div class="cat-bio__img float-left">
-        <img src="./assets/images/cat-looking-upwards-sitting-vibrantly-patterned-rug.jpg"
-          alt="Brown tabby cat looking upwards sitting on a vibrantly patterned rug" />
-      </div>
-      <div class="cat-bio__profile float-right">
-        <h2>Name: Gojira</h2>
-        <h3>Likes:</h3>
-        <ul>
-          <li>Water Fountains</li>
-          <li>Going Outside and Gnawing on Grass</li>
-          <li>Laying on Rugs</li>
-          <li>Treats!</li>
-        </ul>
-        <h3>Dislikes:</h3>
-        <ul>
-          <li>Baths (Showers as Well!)</li>
-          <li>Being Fed Late</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="cat-bio-eek" class="cat-bio float-clear">
-      <div class="cat-bio__img float-left">
-        <img src="./assets/images/cat-hiding-in-dresser-drawer.jpg"
-          alt="White cat with black spots hiding in a dresser drawer" />
-      </div>
-      <div class="cat-bio__profile float-right">
-        <h2>Name: Eek</h2>
-        <h3>Likes:</h3>
-        <ul>
-          <li>Sitting on Laps</li>
-          <li>Laying on Pillows</li>
-          <li>Treats!</li>
-        </ul>
-        <h3>Dislikes:</h3>
-        <ul>
-          <li>When People Come Over</li>
-          <li>Loud Noises</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="cat-bio-tuna" class="cat-bio float-clear">
-      <div class="cat-bio__img float-left">
-        <img src="./assets/images/shaggy-cat-in-a-box.jpg" alt="Shaggy cat relaxes in a small cardboard box" />
-      </div>
-      <div class="cat-bio__profile float-right">
-        <h2>Name: Lil Tuna Luna</h2>
-        <h3>Likes:</h3>
-        <ul>
-          <li>Sleeping on the Bed</li>
-          <li>Eating Tuna</li>
-          <li>Catnip</li>
-        </ul>
-        <h3>Dislikes:</h3>
-        <ul>
-          <li>Treats</li>
-          <li>Being Brushed</li>
-        </ul>
+    <section id="cat-list">
+      <h2 class="text-center">Adoptable Cats</h2>
+      <div class="cat-tiles flex-container flex-wrap justify-center">
+        <a href="/pages/cats/gojira.html" class="cat-tile">
+          <img src="./assets/images/cat-looking-upwards-sitting-vibrantly-patterned-rug.jpg"
+            alt="Brown tabby cat looking upwards sitting on a vibrantly patterned rug" />
+          <div class="overlay flex-container justify-center align-items-center">
+            <h3>Gojira</h3>
+          </div>
+        </a>
+        <a href="/pages/cats/eek.html" class="cat-tile">
+          <img src="./assets/images/cat-hiding-in-dresser-drawer.jpg"
+            alt="White cat with black spots hiding in a dresser drawer" />
+          <div class="overlay flex-container justify-center align-items-center">
+            <h3>Eek</h3>
+          </div>
+        </a>
+        <a href="/pages/cats/lil-tuna-luna.html" class="cat-tile">
+          <img src="./assets/images/shaggy-cat-in-a-box.jpg" alt="Shaggy cat relaxes in a small cardboard box" />
+          <div class="overlay flex-container justify-center align-items-center">
+            <h3>Lil Tuna Luna</h3>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -98,14 +62,14 @@
 
     <section id="cat-adoption" class="cat-adopt text-center">
       <h2>Adopt a Cat of Your Own!</h2>
-      <button id="adopt-button" aria-label="Get started with adopting a cat">
+      <button id="adopt-button" class="primary-button" aria-label="Get started with adopting a cat">
         Get Started Now
       </button>
     </section>
   </main>
 
   <footer>
-    <p class="text-small text-center">&copy; <i>Dylan Martin</i></p>
+    <p class="text-small text-center">&copy; <span class="text-italic">Dylan Martin</span></p>
   </footer>
 
   <script defer src="./assets/scripts/index.js"></script>
