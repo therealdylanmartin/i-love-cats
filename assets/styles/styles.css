@@ -3,9 +3,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
 
+/***************** CSS Variables *****************/
+/* create custom CSS variables (also called custom properties) and apply them to the root of the page, making them accessible to all other CSS */
+:root {
+  /* declare a variable with `--` syntax */
+
+  /* Color Scheme */
+  --primary-color: turquoise;
+  --secondary-color: paleturquoise;
+
+  /* Typography */
+  --primary-font: 'Caveat', cursive;
+}
+
+
 /***************** Global HTML Elements *****************/
 * {
-  font-family: 'Caveat', cursive;
+  font-family: var(--primary-font);
 }
 
 body {
@@ -18,7 +32,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 2.3em;
 }
 
 h3 {
@@ -34,11 +48,29 @@ h5,
 ul li,
 ol li {
   font-size: 1.2em;
+  line-height: 1.4;
 }
 
 ul,
 ol {
   margin-top: -20px;
+}
+
+p>a:link,
+li>a:link,
+p>a:visited,
+li>a:visited,
+p>a:active,
+li>a:active {
+  color: var(--primary-color);
+}
+
+p>a:focus,
+li>a:focus,
+p>a:hover,
+li>a:hover {
+  color: blue;
+  text-decoration: none;
 }
 
 /* Big Desktop Screen */
@@ -120,9 +152,11 @@ ol {
   .display-desktop {
     display: none;
   }
+
   .display-mobile {
     display: block;
   }
+
   .flex-column-mobile {
     align-items: center;
     flex-direction: column;
@@ -130,9 +164,9 @@ ol {
 }
 
 
-/***************** Global Classes *****************/
+/***************** Header Styles *****************/
 header {
-  background-color: paleturquoise;
+  background-color: var(--secondary-color);
   padding: 10px;
   position: fixed;
   width: 100%;
@@ -155,18 +189,16 @@ header {
   min-width: calc(100% - 30px);
 }
 
-.top-nav > .page-divider {
+.top-nav>.page-divider {
   margin: 20px 15px;
 }
 
 .top-nav__links {
-  margin-top: 33px;
   margin-right: 20px;
-  /* can also use shorthand with "margin: 33px 20px 0 0;" */
 }
 
 .top-nav__links a {
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   font-size: 34px;
   text-decoration: none;
 }
@@ -179,20 +211,43 @@ header {
   margin-right: 20px;
 }
 
+
+/***************** Page Styles *****************/
 .page-content {
   margin: 30px 10px;
+}
+
+.crumbs {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.crumbs ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.crumb {
+  display: inline-block;
+}
+
+.crumb a::after {
+  display: inline-block;
+  color: #000;
+  content: '>';
+  font-weight: bold;
+  padding: 0 3px 0 9px;
 }
 
 .primary-button {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: turquoise;
-  border: 2px solid turquoise;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  font-family: 'Caveat', cursive;
   font-size: 1.4em;
   font-weight: 700;
   letter-spacing: .15em;
@@ -203,11 +258,13 @@ header {
 
 .primary-button:hover {
   background-color: transparent;
-  color: turquoise;
+  color: var(--primary-color);
 }
 
+
+/***************** Footer Styles *****************/
 footer {
-  background-color: paleturquoise;
+  background-color: var(--secondary-color);
   padding: 20px 10px;
 }
 
@@ -233,6 +290,7 @@ footer {
 }
 
 .page-title h2 {
+  font-size: 1.8em;
   margin: 0 0 40px;
 }
 
@@ -241,7 +299,7 @@ footer {
 
 .cat-tiles {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1080px;
 }
 
 .cat-tile {
@@ -257,21 +315,21 @@ footer {
 }
 
 .cat-tile:hover {
-  border-color: turquoise;
+  border-color: var(--primary-color);
   transform: scale(1.06);
 }
 
-.cat-tile > img {
+.cat-tile>img {
   max-width: 100%;
 }
 
-.cat-tile > .overlay {
+.cat-tile>.overlay {
   opacity: 0;
   transition: opacity .3s ease-in;
 }
 
-.cat-tile:hover > .overlay {
-  background-color: rgba(255,255,255, .5);
+.cat-tile:hover>.overlay {
+  background-color: rgba(255, 255, 255, .5);
   position: absolute;
   left: 0;
   top: 0;
@@ -280,7 +338,7 @@ footer {
   width: 100%;
 }
 
-.cat-tile > .overlay > h3 {
+.cat-tile>.overlay>h3 {
   color: #000;
   font-size: 2.3em;
 }
@@ -318,13 +376,16 @@ footer {
   .cat-bio {
     max-width: 600px;
   }
+
   .cat-bio__img {
     order: 2;
     width: 100%;
   }
+
   .cat-bio__profile {
     width: calc(100% - 30px);
   }
+
   .cat-bio__profile h2 {
     margin-top: 0;
   }
@@ -336,8 +397,9 @@ footer {
   margin: 50px auto;
 }
 
-.cat-adopt h2 {
-  font-size: 4em;
+.cat-adopt>h2 {
+  font-size: 3.8em;
+  line-height: 1.2;
 }
 
 
@@ -349,6 +411,10 @@ form#contact-form {
 
 .form-row {
   margin-bottom: 10px;
+}
+
+.form-row:last-child {
+  margin-top: 20px;
 }
 
 .form-label {
@@ -377,9 +443,15 @@ textarea.form-input__text {
   height: auto;
 }
 
-.form-input__select:focus,
-.form-input__text:focus {
-  border-color: turquoise;
+.form-input__select:focus-visible,
+.form-input__text:focus-visible,
+.form-input__checkbox:focus-visible {
+  outline-color: var(--primary-color);
+}
+
+.form-input__select::placeholder,
+.form-input__text::placeholder {
+  font-style: italic;
 }
 
 .form-input__checkbox {
@@ -387,12 +459,10 @@ textarea.form-input__text {
   width: 15px;
 }
 
-.form-input__checkbox + .form-label {
-  color: red;
+.form-input__checkbox+.form-label {
   display: inline;
 }
 
-.form-input__checkbox:checked + .form-label {
+.form-input__checkbox:checked+.form-label {
   color: green;
 }
-

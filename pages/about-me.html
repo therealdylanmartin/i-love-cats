@@ -2,16 +2,18 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="A place for cat lovers, of course">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me | I Love Cats</title>
+  <title>About Me | I Love Cats!</title>
+  <link href="../assets/styles/reset.css" rel="stylesheet" type="text/css" />
   <link href="../assets/styles/styles.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
   <header>
-    <nav class="top-nav flex-container justify-between flex-column-mobile">
+    <nav class="top-nav flex-container justify-between align-items-center flex-column-mobile">
       <a href="/" class="logo" aria-label="I Love Cats Homepage">
         <img class="logo__img" src="../assets/images/i-love-cats_logo.png" alt="I Love Cats!" />
       </a>
@@ -31,6 +33,13 @@
     </div>
 
     <hr class="page-divider" />
+
+    <nav class="crumbs">
+      <ol>
+        <li class="crumb"><a href="/">Homepage</a></li>
+        <li class="crumb">About Me</li>
+      </ol>
+    </nav>
 
     <section id="bio-dylan-martin" class="cat-bio flex-container justify-between flex-column-tablet">
       <div class="cat-bio__img">
@@ -82,10 +91,11 @@
         </div>
         <div class="form-row">
           <input class="form-input__checkbox" id="agreement" type="checkbox" required />
-          <label class="form-label" for="agreement">I agree to share my e-mail address with Dylan Martin</label>
+          <label class="form-label" for="agreement">I agree to share my email address with Dylan Martin</label>
         </div>
         <div class="form-row">
-          <button type="submit" class="primary-button" aria-label="Send message to Dylan">Send Message</button>
+          <button id="contact-button" type="submit" class="primary-button" aria-label="Send message to Dylan">Send
+            Message</button>
         </div>
       </form>
     </section>
