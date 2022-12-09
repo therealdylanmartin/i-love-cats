@@ -9,17 +9,17 @@
   /* declare a variable with `--` syntax */
 
   /* Color Scheme */
-  --primary-color: turquoise;
-  --secondary-color: paleturquoise;
+  --color-primary: turquoise;
+  --color-secondary: paleturquoise;
 
   /* Typography */
-  --primary-font: 'Caveat', cursive;
+  --font-primary: 'Caveat', cursive;
 }
 
 
 /***************** Global HTML Elements *****************/
 * {
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
 }
 
 body {
@@ -62,7 +62,7 @@ p>a:visited,
 li>a:visited,
 p>a:active,
 li>a:active {
-  color: var(--primary-color);
+  color: var(--color-primary);
 }
 
 p>a:focus,
@@ -166,7 +166,7 @@ li>a:hover {
 
 /***************** Header Styles *****************/
 header {
-  background-color: var(--secondary-color);
+  background-color: var(--color-secondary);
   padding: 10px;
   position: fixed;
   width: 100%;
@@ -243,8 +243,8 @@ header {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
@@ -258,13 +258,13 @@ header {
 
 .primary-button:hover {
   background-color: transparent;
-  color: var(--primary-color);
+  color: var(--color-primary);
 }
 
 
 /***************** Footer Styles *****************/
 footer {
-  background-color: var(--secondary-color);
+  background-color: var(--color-secondary);
   padding: 20px 10px;
 }
 
@@ -315,7 +315,7 @@ footer {
 }
 
 .cat-tile:hover {
-  border-color: var(--primary-color);
+  border-color: var(--color-primary);
   transform: scale(1.06);
 }
 
@@ -446,7 +446,7 @@ textarea.form-input__text {
 .form-input__select:focus-visible,
 .form-input__text:focus-visible,
 .form-input__checkbox:focus-visible {
-  outline-color: var(--primary-color);
+  outline-color: var(--color-primary);
 }
 
 .form-input__select::placeholder,
