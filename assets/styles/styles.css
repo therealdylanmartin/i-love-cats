@@ -184,6 +184,7 @@ header {
 
 .page-divider {
   border-top: 2px dashed #000;
+  border-bottom: none;
   margin: 30px 15px;
   /* smallest size is full-width minus left & right margin */
   min-width: calc(100% - 30px);
