@@ -17,7 +17,7 @@ const appendToGrid = function () {
 
     // Create and attach grid tile link to gridElement
     catContainer.setAttribute('class', 'cat-tile');
-    catContainer.setAttribute('href', `/pages/cats/${nameSlugified}.html`);
+    catContainer.setAttribute('href', `/i-love-cats/pages/cats/${nameSlugified}.html`);
     gridElement.appendChild(catContainer);
     // Create and attach image to catContainer
     catImage.setAttribute('alt', cat.imageAltText);
