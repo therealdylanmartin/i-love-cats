@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Eek | I Love Cats</title>
-  <meta name="description" content="Learn more about Eek, the adorable adoptable cat.">
+  <title></title>
+  <meta name="description">
   <meta name="keywords"
     content="adopt a cat, adopt a kitten, cat adoption, pet adoption, cats, adoption, feline companion, cats in need">
   <link href="../../assets/styles/reset.css" rel="stylesheet" type="text/css" />
@@ -29,9 +29,8 @@
 
   <main class="page-content">
 
-    <div class="page-title text-center">
-      <h1>About Eek!</h1>
-      <h2>~ a precious princess that keeps it chill ~</h2>
+    <div id="page-title" class="page-title text-center">
+      <!-- Title is built with JavaScript inside the cats.js file. -->
     </div>
 
     <hr class="page-divider" />
@@ -39,29 +38,12 @@
     <nav class="crumbs">
       <ol>
         <li class="crumb"><a href="/">Homepage</a></li>
-        <li class="crumb">About Eek</li>
+        <li class="crumb current-crumb"></li>
       </ol>
     </nav>
 
     <section id="cat-bio-eek" class="cat-bio flex-container justify-between flex-column-tablet">
-      <div class="cat-bio__img">
-        <img src="../../assets/images/cat-hiding-in-dresser-drawer.jpg"
-          alt="White cat with black spots hiding in a dresser drawer" />
-      </div>
-      <div class="cat-bio__profile">
-        <h2>Name: Eek</h2>
-        <h3>Likes:</h3>
-        <ul>
-          <li>Sitting on Laps</li>
-          <li>Laying on Pillows</li>
-          <li>Treats!</li>
-        </ul>
-        <h3>Dislikes:</h3>
-        <ul>
-          <li>When People Come Over</li>
-          <li>Loud Noises</li>
-        </ul>
-      </div>
+
     </section>
 
     <hr class="page-divider" />
@@ -79,6 +61,8 @@
   </footer>
 
   <script defer src="../../assets/scripts/index.js"></script>
+  <script defer src="../../assets/scripts/availableCats.js"></script>
+  <script defer src="../../assets/scripts/cats.js"></script>
 </body>
 
 </html>

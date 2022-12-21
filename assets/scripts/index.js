@@ -1,7 +1,12 @@
+// VARIABLES //
 const adoptButton = document.querySelector('#adopt-button');
 
-const adoptAlert = function (e) {
+// FUNCTIONS //
+
+// Adopt button alert
+const adoptAlert = function (event) {
   alert('Get started with adoption!');
 }
 
+// EVENT LISTENERS //
 adoptButton.addEventListener('click', adoptAlert);
