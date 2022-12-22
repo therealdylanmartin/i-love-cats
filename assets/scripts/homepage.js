@@ -20,8 +20,8 @@ const appendToGrid = function () {
     catContainer.setAttribute('href', `/pages/cats/${nameSlugified}.html`);
     gridElement.appendChild(catContainer);
     // Create and attach image to catContainer
-    catImage.setAttribute('alt', cat.imageAltText);
-    catImage.setAttribute('src', `./assets/images/${cat.image}`);
+    catImage.setAttribute('alt', cat.image.altText);
+    catImage.setAttribute('src', `./assets/images/${cat.image.path}`);
     catContainer.appendChild(catImage);
     // Create and attach overlay div to catContainer
     catInnerDiv.setAttribute('class', 'overlay flex-container justify-center align-items-center');
