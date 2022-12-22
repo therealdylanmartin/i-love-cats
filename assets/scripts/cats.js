@@ -45,8 +45,8 @@ const appendCatBio = function () {
       imageDiv.setAttribute('class', 'cat-bio__img');
       bioContainer.appendChild(imageDiv);
       // Create and append image to imageDiv
-      image.setAttribute('src', `../../assets/images/${cat.image}`);
-      image.setAttribute('alt', cat.imageAltText);
+      image.setAttribute('src', `../../assets/images/${cat.image.path}`);
+      image.setAttribute('alt', cat.image.altText);
       imageDiv.appendChild(image);
 
       // Create and append infoDiv to bioContainer
