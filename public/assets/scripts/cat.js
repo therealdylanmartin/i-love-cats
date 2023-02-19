@@ -1,13 +1,19 @@
 // FUNCTIONS //
 
-const appendCatBio = function () {
+const appendCatBio = function (cats) {
+  // Initialize variable to check if we find the cat, currently false
+  let isCatFound = false;
+
   // for...of loop works similarly to standard for loop but without the index
-  for (let cat of availableCats) {
+  for (let cat of cats) {
     // Turn cat.name into a slug to check URL and for use in id
     const nameSlugified = cat.name.toLowerCase().replaceAll(' ', '-');
 
     // If block to match cat object to page URL
-    if (window.location.href.includes(nameSlugified)) {
+    if (window.location.pathname === `/cats/${nameSlugified}`) {
+      // Set variable for finding cat to true
+      isCatFound = true;
+
       // Create elements to set attributes on and append to document
       const title = document.createElement('h1');
       const tagline = document.createElement('h2');
@@ -25,7 +31,7 @@ const appendCatBio = function () {
       const metaDescription = document.querySelector('meta[name="description"]');
       const titleContainer = document.querySelector('#page-title');
       const pageCrumb = document.querySelector('.current-crumb');
-      const bioContainer = document.querySelector(`#cat-bio-${nameSlugified}`);
+      const bioContainer = document.querySelector(`#cat-bio`);
 
       // Set webpage <title> element in <head> section
       headTitle.textContent = `About ${cat.name} | I Love Cats!`;
@@ -45,7 +51,7 @@ const appendCatBio = function () {
       imageDiv.setAttribute('class', 'cat-bio__img');
       bioContainer.appendChild(imageDiv);
       // Create and append image to imageDiv
-      image.setAttribute('src', `../../assets/images/${cat.image.path}`);
+      image.setAttribute('src', `/assets/images/${cat.image.path}`);
       image.setAttribute('alt', cat.image.altText);
       imageDiv.appendChild(image);
 
@@ -81,8 +87,37 @@ const appendCatBio = function () {
       }
     }
   }
+
+  // If specified cat isn't found, set page message to 404 error
+  if (!isCatFound) {
+    // Create elements to set attributes on and append to document
+    const title = document.createElement('h1');
+    const tagline = document.createElement('h2');
+
+    // Select elements for altering and appending
+    const headTitle = document.querySelector('title');
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const titleContainer = document.querySelector('#page-title');
+    const pageCrumb = document.querySelector('.current-crumb');
+
+    // Set webpage <title> element in <head> section
+    headTitle.textContent = 'Cat Not Found | I Love Cats!';
+    // Set meta description element content
+    metaDescription.setAttribute('content', '404 error! We didn\'t find the cat you\'re looking for.');
+
+    // Add text and attach page title and tagline to titleContainer
+    title.innerHTML = 'Cat Not Found!';
+    tagline.textContent = '~ We didn\'t find the cat you\'re looking for ~';
+    titleContainer.appendChild(title);
+    titleContainer.appendChild(tagline);
+
+    // Add cat name to breadcrumb navigation
+    pageCrumb.textContent = '404 Error';
+  }
 }
 
 // CALL FUNCTIONS //
 
-appendCatBio();
+getCatData()
+  .then(availableCats => appendCatBio(availableCats))
+  .catch(error => console.error(error))

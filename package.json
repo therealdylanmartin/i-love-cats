@@ -1,0 +1,27 @@
+{
+  "name": "i-love-cats",
+  "version": "1.0.0",
+  "description": "A place for cat lovers",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/therealdylanmartin/i-love-cats.git"
+  },
+  "keywords": [
+    "cats",
+    "felines",
+    "adoption"
+  ],
+  "author": "Dylan Martin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/therealdylanmartin/i-love-cats/issues"
+  },
+  "homepage": "https://github.com/therealdylanmartin/i-love-cats#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

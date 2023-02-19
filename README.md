@@ -7,11 +7,11 @@
 - [Features](#features)
 - [Tests](#tests)
 
----
+----
 
 ## Installation
 
-Simply open the "index.html" file in your prefered browser.
+Run "npm install" to install modules and "npm start" to start the application.
 
 ## License
 
@@ -31,6 +31,6 @@ Feel free to use this project as pleased, but don't act like you own it.
 
 - No tests at this time.
 
----
+----
 
 Created by Dylan Martin 2022
